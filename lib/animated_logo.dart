@@ -24,11 +24,7 @@ class _AnimatedLogoState extends State<AnimatedLogo>
     );
     animationController.forward();
     animationController.addListener(() {
-      setState(() {
-        if (animationController.status == AnimationStatus.completed) {
-          animationController.;
-        }
-      });
+      setState(() {});
     });
   }
 
