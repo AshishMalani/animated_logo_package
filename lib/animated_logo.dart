@@ -21,7 +21,7 @@ class _AnimatedLogoState extends State<AnimatedLogo>
     animationController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 5000),
-    );
+    )..repeat();
     animationController.forward();
     animationController.addListener(() {
       setState(() {});
