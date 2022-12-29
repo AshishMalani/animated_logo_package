@@ -1,5 +1,7 @@
 library animated_logo;
 
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 
 class AnimatedLogo extends StatefulWidget {
@@ -20,12 +22,8 @@ class _AnimatedLogoState extends State<AnimatedLogo>
     super.initState();
     animationController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 5000),
+      duration: const Duration(seconds: 2),
     )..repeat();
-    animationController.forward();
-    animationController.addListener(() {
-      setState(() {});
-    });
   }
 
   @override
@@ -35,7 +33,7 @@ class _AnimatedLogoState extends State<AnimatedLogo>
       child: widget.child,
       builder: (context, child) {
         return Transform.rotate(
-          angle: animationController.value,
+          angle: animationController.value * 2 * math.pi,
           child: child,
         );
       },
