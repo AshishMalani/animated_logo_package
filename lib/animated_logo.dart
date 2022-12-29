@@ -22,8 +22,20 @@ class _AnimatedLogoState extends State<AnimatedLogo>
     super.initState();
     animationController = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 2),
+      duration: const Duration(seconds: 4),
     )..repeat();
+
+    animationController.forward();
+    animationController.addListener(() {
+      setState(() {
+        if (animationController.status == AnimationStatus.completed) {
+          animationController.reverse();
+        } else {
+          animationController.repeat();
+        }
+      });
+      setState(() {});
+    });
   }
 
   @override
