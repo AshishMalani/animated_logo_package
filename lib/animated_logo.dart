@@ -30,8 +30,6 @@ class _AnimatedLogoState extends State<AnimatedLogo>
       setState(() {
         if (animationController.status == AnimationStatus.completed) {
           animationController.reverse();
-        } else {
-          animationController.repeat();
         }
       });
       setState(() {});
