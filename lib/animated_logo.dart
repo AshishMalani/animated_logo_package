@@ -20,11 +20,15 @@ class _AnimatedLogoState extends State<AnimatedLogo>
     super.initState();
     animationController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 5000),
+      duration: const Duration(minutes: 30),
     );
     animationController.forward();
     animationController.addListener(() {
-      setState(() {});
+      setState(() {
+        if (animationController.status == AnimationStatus.completed) {
+          animationController.;
+        }
+      });
     });
   }
 
